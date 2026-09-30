@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Booking Scheduler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./panel.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Booking Scheduler</h1>
+      <p class="muted">Configure services and availability, then embed the booking widget.</p>
+    </header>
+
+    <section class="card">
+      <h2>Services</h2>
+      <ul id="services-list" class="plain"></ul>
+      <div class="row">
+        <input id="svc-name" placeholder="Service name" />
+        <input id="svc-duration" type="number" min="5" step="5" placeholder="Minutes" />
+        <input id="svc-price" type="number" min="0" placeholder="Price" />
+        <button id="add-service" class="btn">Add</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Weekly availability</h2>
+      <table class="grid" id="rules-grid"></table>
+      <button id="save-rules" class="btn primary">Save availability</button>
+    </section>
+
+    <section class="card">
+      <h2>Blackout dates</h2>
+      <ul id="blackouts-list" class="plain"></ul>
+      <div class="row">
+        <input id="blackout-date" type="date" />
+        <input id="blackout-reason" placeholder="Reason (optional)" />
+        <button id="add-blackout" class="btn">Add</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Embed snippet</h2>
+      <code id="embed-snippet"></code>
+      <button id="copy-snippet" class="btn">Copy</button>
+      <button id="insert-embed" class="btn">Insert into page</button>
+    </section>
+
+    <section class="card">
+      <h2>Upcoming bookings</h2>
+      <table class="grid"><tbody id="bookings-body"></tbody></table>
+    </section>
+  </div>
+  <script src="./panel.js"></script>
+</body>
+</html>
